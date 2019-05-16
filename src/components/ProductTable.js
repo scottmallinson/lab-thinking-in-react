@@ -5,8 +5,19 @@ export default class ProductTable extends Component {
   render() {
     return (
       <div>
-        <h2>Product Table</h2>
-        <ProductRow />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              this.props.products.map( (product, index) => <ProductRow key={index} {...product} /> )
+            }
+          </tbody>
+        </table>
       </div>
     )
   }
